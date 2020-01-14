@@ -1,0 +1,26 @@
+// Importing the index page
+import * as indexPg from '../pages/index'
+import * as bedroomPg from '../pages/bedroom'
+
+
+
+// Defining the test suite
+describe('Test suite', function(){
+
+    // First test case
+    beforeEach(() =>{
+        cy.visit('http://rbt-course:8080/hotel/faces/login/login.xhtml') 
+            indexPg.functLogin(cy)
+                   
+    })
+    //it('Login', function(){
+    //    indexPg.functLogin(cy)
+    //})
+    it('Create Bed', function(){
+        bedroomPg.functBed(cy)
+    })
+    it('Check Bed', function(){
+                bedroomPg.checkBed(cy)
+    })
+
+})
